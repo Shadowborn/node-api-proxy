@@ -7,7 +7,7 @@ const app = express();
 const port = config.port;
 app.use(cors());
 
-app.use('/', function(req, res) {
+app.use('https://api.stocktwits.com/api/2/streams/trending.json', function(req, res) {
 
   //Take the baseurl from your api and also supply whatever 
   //route you use with that url
