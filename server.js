@@ -17,7 +17,7 @@ app.use('/', function(req, res) {
   //Pipe is through request, this will just redirect 
   //everything from the api to your own server at localhost. 
   //It will also pipe your queries in the url
-  req.pipe(request({ uri: url })).pipe(res);
+  req.pipe(request({ url })).pipe(res);
 });
 
 
