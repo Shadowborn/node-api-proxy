@@ -7,17 +7,17 @@ const app = express();
 const port = config.port;
 app.use(cors());
 
-app.use('https://api.stocktwits.com/api/2/streams/trending.json', function(req, res) {
+app.use('/', function(req, res) {
 
   //Take the baseurl from your api and also supply whatever 
   //route you use with that url
   let url =  config.apiUrl + req.url;
-  let query = config.assignKey(req.query);
+  // let query = config.assignKey(req.query);
 
   //Pipe is through request, this will just redirect 
   //everything from the api to your own server at localhost. 
   //It will also pipe your queries in the url
-  req.pipe(request({ qs: query , uri: url })).pipe(res);
+  req.pipe(request({ uri: url })).pipe(res);
 });
 
 
